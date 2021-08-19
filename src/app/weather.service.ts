@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Forecast } from './forecast';
-import { Weather } from './weather';
+import { Forecast } from './model/forecast';
+import { Weather } from './model/weather';
 
 @Injectable({
   providedIn: 'root'

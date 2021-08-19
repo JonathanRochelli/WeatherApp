@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Forecast } from '../forecast';
+import { Forecast } from '../model/forecast';
 import { GeolocationService } from '../geolocation.service';
-import { Point } from '../point';
-import { Weather } from '../weather';
+import { Point } from '../model/point';
+import { Weather } from '../model/weather';
 import { WeatherService } from '../weather.service';
 
 @Component({
