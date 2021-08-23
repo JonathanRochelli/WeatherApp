@@ -10,6 +10,8 @@ import { filter, map, switchMap } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
 
+  title : string = "WeatherApp"
+
   constructor (private updates: SwUpdate, private snackbar: MatSnackBar) {}
 
   ngOnInit() {
