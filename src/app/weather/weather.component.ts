@@ -14,7 +14,7 @@ export class WeatherComponent implements OnInit {
 
   weather : Weather | undefined;
   forecasts : Forecast[] | undefined;
-  date : Date = new Date()
+  date : Date = new Date();
 
   constructor (private weatherService : WeatherService, private geolocationService : GeolocationService) {}
 
