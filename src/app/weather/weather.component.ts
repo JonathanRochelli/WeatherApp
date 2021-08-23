@@ -18,8 +18,7 @@ export class WeatherComponent implements OnInit {
 
   constructor (private weatherService : WeatherService, private geolocationService : GeolocationService) {}
 
-  ngOnInit(){
-  }
+  ngOnInit(){}
 
   search(city : string){
     this.getWeather(city);
@@ -27,14 +26,15 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeather(city : string){
-    this.weatherService.getWeather(city).subscribe((weather : Weather) => { console.log(weather); this.weather = weather });
-    console.log(this.weather);
+    this.weatherService.getWeather(city).subscribe((weather : Weather) => { this.weather = weather });
   }
 
   getForecast(city : string){
     this.geolocationService.getCoordinates(city).subscribe((point : Point) => {
-      console.log(point)
-      this.weatherService.getForecast(point.coordinates[1], point.coordinates[0]).subscribe((forecasts : Forecast[]) => { console.log(forecasts); forecasts.shift(); this.forecasts = forecasts})
-    })
+      this.weatherService.getForecast(point.coordinates[1], point.coordinates[0]).subscribe((forecasts : Forecast[]) => { 
+        forecasts.shift();
+        this.forecasts = forecasts;
+      });
+    });
   }
 }
